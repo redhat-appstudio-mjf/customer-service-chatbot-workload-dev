@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: customer-service-chatbot-workload-dev 
+  description: Secure Supply Chain Example for Chatbot Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=customer-service-chatbot-workload-dev  
+    janus-idp.io/tekton: customer-service-chatbot-workload-dev 
+    backstage.io/kubernetes-id: customer-service-chatbot-workload-dev 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: maysunfaisal/customer-service-chatbot-workload-dev
+  tags: ["ai", "llamacpp", "vllm", "python"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
